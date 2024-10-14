@@ -9,6 +9,18 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
+func BenchmarkHelloWorldGhozi(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		HelloWorld("Ghozi")
+	}
+}
+
+func BenchmarkHelloWorldHumama(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		HelloWorld("Humama")
+	}
+}
+
 func TestSkip(t *testing.T) {
 	if runtime.GOOS == "darwin" {
 		t.Skip("This unit test not running mac OS")
